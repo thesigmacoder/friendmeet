@@ -1,0 +1,217 @@
+/* main.css - improved, responsive, and more robust */
+
+:root{
+  --accent:#9d4edd;
+  --muted:#777;
+  --bg:#f2f2f2;
+  --card-bg:#fff;
+  --text:#222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #555;
+  color: white;
+  padding: 12px 20px;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Ensure headings inside header don't cause overflow */
+header h1,
+header h2 {
+  margin: 0;
+  line-height: 1;
+}
+
+/* search icon / filter button in header */
+header .searchFilter {
+  font-size: 20px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 6px;
+  border-radius: 6px;
+}
+header .searchFilter:focus {
+  outline: 2px solid rgba(157,78,221,0.25);
+}
+
+/* Main layout */
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Profile card */
+.profileSection {
+  background: var(--card-bg);
+  padding: 20px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+}
+
+.profileTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+.profileInfo p {
+  margin: 5px 0;
+}
+
+/* Picture area: allow an img or placeholder text */
+.profilePic {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #777;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fafafa;
+}
+.profilePic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* Interests */
+.interests {
+  margin: 10px 0;
+}
+.interests button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 6px;
+  border: 1px solid var(--muted);
+  border-radius: 5px;
+  background: #eee;
+  cursor: pointer;
+}
+.interests button:hover { opacity: 0.95; }
+
+/* About area */
+.about {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  min-height: 80px;
+  padding: 10px;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+/* Actions (buttons) */
+.actions {
+  margin-top: 10px;
+}
+.actions button {
+  margin-right: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+.actions button:hover { opacity: 0.95; }
+
+/* Friends list */
+.friendsSection {
+  background: var(--card-bg);
+  padding: 15px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.friendsSection h3 {
+  margin-top: 0;
+}
+
+.friendCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+}
+
+.friendCard .info {
+  flex: 1;    
+}
+
+.friendCard button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  background: #555;
+  color: white;
+  cursor: pointer;
+}
+
+.friendAge {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Small screen adjustments */
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .profileTop {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .profilePic {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 8px;
+  }
+
+  .friendsSection {
+    max-height: none;
+  }
+}

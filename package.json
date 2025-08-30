@@ -1,0 +1,18 @@
+{
+  "name": "friendmeet",
+  "version": "1.0.0",
+  "description": "Make new friends and meet them",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "path": "^0.12.7",
+    "siennasql": "^1.0.1"
+  }
+}
